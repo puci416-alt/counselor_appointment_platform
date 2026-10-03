@@ -1,0 +1,80 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: counselor-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        ip: 127.0.0.1
+        port: 8088
+      config:
+        import-check:
+          enabled: false
+
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+
+      routes:
+        - id: counselor-service
+          uri: lb://counselor-service
+          predicates:
+            - Path=/api/counselor/**
+          filters:
+            - StripPrefix=0
+
+        - id: order-service-schedule
+          uri: lb://counselor-order-service
+          predicates:
+            - Path=/api/schedule/**
+          filters:
+            - StripPrefix=0
+
+        - id: order-service-appointment
+          uri: lb://counselor-order-service
+          predicates:
+            - Path=/api/appointment/**
+          filters:
+            - StripPrefix=0
+
+        - id: order-service-user
+          uri: lb://counselor-order-service
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - StripPrefix=0
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 3600
+
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
