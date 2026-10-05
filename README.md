@@ -143,7 +143,25 @@ counselor-platform/
 
 ---
 
-## 五、解决的核心问题
+## 五、效果展示
+
+### 1. 咨询师管理
+
+<img width="703" height="395" alt="屏幕截图 2026-10-05 120256" src="https://github.com/user-attachments/assets/28c953d7-ecb2-416f-b18e-6dcdae376a68" />
+
+### 2. 时段管理
+
+<img width="893" height="704" alt="屏幕截图 2026-10-05 121910" src="https://github.com/user-attachments/assets/12972332-2159-45bb-b599-49abd34771b7" />
+
+### 3. 预约管理
+
+<img width="545" height="343" alt="屏幕截图 2026-10-05 121816" src="https://github.com/user-attachments/assets/503eac89-1aa3-4aa5-8b1b-32632f8f7059" />
+
+<img width="928" height="382" alt="屏幕截图 2026-10-05 121847" src="https://github.com/user-attachments/assets/6ced0155-5139-413e-86b1-740c7b825383" />
+
+---
+
+## 六、解决的核心问题
 
 | 问题 | 解决方案 |
 |------|------|
